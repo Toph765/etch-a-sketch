@@ -1,0 +1,20 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  
+  .gridBox {
+    border: 2px solid black;
+    width: 550px;
+    height: 550px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .pixel {
+    border: 1px solid black;
+    padding: 39%;
+  }
