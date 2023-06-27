@@ -7,6 +7,9 @@ function createGrid(size) {
 
   for (let i = 0; i <= `${size**2}`; i++) {
     let pixel = document.createElement('div');
+    pixel.addEventListener("mouseover", () => {
+      pixel.style.backgroundColor = "black";
+    })
     pixel.className = 'pixel';
     gridBox.appendChild(pixel);
   }
