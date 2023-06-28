@@ -1,3 +1,5 @@
+let color = 'black';
+
 function createGrid(size) {
   let gridBox = document.querySelector(".gridBox");
   let square = gridBox.querySelectorAll('div');
@@ -7,9 +9,7 @@ function createGrid(size) {
 
   for (let i = 0; i <= `${size**2}`; i++) {
     let pixel = document.createElement('div');
-    pixel.addEventListener("mouseover", () => {
-      pixel.style.backgroundColor = "black";
-    })
+    pixel.addEventListener("mouseover", colorGrid);
     pixel.className = 'pixel';
     gridBox.appendChild(pixel);
   }
@@ -25,4 +25,16 @@ function changeSize(input) {
     return alert("That's too little!");
   }
   createGrid(input);
+}
+
+function colorGrid() {
+  if (color === "random") {
+    this.style.backgroundColor = `hsl(${Math.random()*360}, 100%, 50%)`;
+  } else {
+    this.style.backgroundColor = color;
+  }
+}
+
+function changeColor(change) {
+  color = change;
 }
