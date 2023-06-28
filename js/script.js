@@ -1,4 +1,9 @@
 let color = 'black';
+let click = true;
+window.addEventListener("mousedown", () => click = true);
+window.addEventListener("mouseup", () => click = true);
+
+createGrid(16);
 
 function createGrid(size) {
   let gridBox = document.querySelector(".gridBox");
@@ -9,13 +14,12 @@ function createGrid(size) {
 
   for (let i = 0; i <= `${size**2}`; i++) {
     let pixel = document.createElement('div');
-    pixel.addEventListener("mouseover", colorGrid);
+    pixel.addEventListener("mousedown", colorGrid);
+    pixel.addEventListener("mousemove", colorGrid);  
     pixel.className = 'pixel';
     gridBox.appendChild(pixel);
   }
 }
-
-createGrid(16);
 
 function changeSize(input) {
   if (input > 100) {
@@ -25,6 +29,10 @@ function changeSize(input) {
     return alert("That's too little!");
   }
   createGrid(input);
+}
+
+function changeBtn() {
+  changeSize();
 }
 
 function colorGrid() {
@@ -37,4 +45,10 @@ function colorGrid() {
 
 function changeColor(change) {
   color = change;
+}
+
+function clearGrid() {
+  let gridBox = document.querySelector(".gridBox");
+  let square = gridBox.querySelectorAll('div');
+  square.forEach(div => div.style.backgroundColor = 'white');
 }
