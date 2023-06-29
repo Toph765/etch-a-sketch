@@ -1,44 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Raleway&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+body {
+  background-color: #FBFFDC;
+}
+
 .header {
   text-align: center;
+  font-size:30px;
+  font-family: 'Poppins', sans-serif;
 }
 
 .main {
   display: flex;
   justify-content: center;
-  gap: 80px;
+  gap: 60px;
+  margin-bottom: 15px;
 }
 
 .settings {
-  flex: 1;
+  background-color: #A4907C;
   display: flex;
   flex-direction: column;
-  border: 1px solid black;
+  border-radius: 8px;
   justify-content: center;
   align-items: center;
-  margin-left: 150px;
-  margin-top: 8px;
-  gap: 8px;
+  margin: 8px 40px 8px 40px;
+  padding: 20px;
+  gap: 18px;
 }
 
 button {
   width: 200px;
+  height: 50px;
+  font-size: 24px;
+  font-family: 'Raleway', sans-serif;
+  border-radius: 8px;
 }
 
 .size {
   text-align: center;
+  font-family: 'Raleway', sans-serif;
+}
+
+.slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 8px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%; 
+  background: #884A39; 
+  cursor: pointer; 
 }
 
 .gridBox {
-  border: 2px solid black;
+  background-color: white;
   width: 550px;
   height: 550px;
   display: grid;
-  margin: 8px 150px 8px 40px;
-
+  margin: 8px 120px 8px 40px;
+  box-shadow: 0 1px 6px #C38154;
 }
