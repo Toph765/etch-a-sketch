@@ -33,10 +33,6 @@ function changeSize(input) {
   createGrid(input);
 }
 
-function changeBtn() {
-  changeSize();
-}
-
 function colorGrid(e) {
   if (e.type === "mousemove" && !mouseDown) return;
   if (color === "random") {
