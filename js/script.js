@@ -1,7 +1,7 @@
 let color = 'black';
-let click = true;
-window.addEventListener("mousedown", () => click = true);
-window.addEventListener("mouseup", () => click = true);
+let mouseDown = false;
+window.addEventListener("mousedown", () => mouseDown = true);
+window.addEventListener("mouseup", () => mouseDown = false);
 
 createGrid(16);
 
@@ -35,11 +35,12 @@ function changeBtn() {
   changeSize();
 }
 
-function colorGrid() {
+function colorGrid(e) {
+  if (e.type === "mousemove" && !mouseDown) return;
   if (color === "random") {
-    this.style.backgroundColor = `hsl(${Math.random()*360}, 100%, 50%)`;
+    e.target.style.backgroundColor = `hsl(${Math.random()*360}, 100%, 50%)`;
   } else {
-    this.style.backgroundColor = color;
+    e.target.style.backgroundColor = color;
   }
 }
 
