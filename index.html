@@ -8,16 +8,21 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <div class="gridBox"></div>
-    <div class="sizing">
-        <input type="text" value="16" class="input" onchange="changeSize(this.value)">
-        <button>change size</button>
+    <div class="header">
+        <h1>Etch-a-Sketch</h1>
     </div>
-    <div class="color">
-        <button onclick="changeColor('black')">Black</button>
-        <button onclick="changeColor('white')">Erase</button>
-        <button onclick="changeColor('random')">Rainbow</button>
-        <button onclick="clearGrid()">Clear</button>
+    <div class="main">
+        <div class="settings">
+            <button onclick="changeColor('black')">Black</button>
+            <button onclick="changeColor('white')">Erase</button>
+            <button onclick="changeColor('random')">Rainbow</button>
+            <button onclick="clearGrid()">Clear</button>
+            <div class="sizing">
+                <div class="size"><span class="input"></span> x <span class="input"></span></div>
+                <input type="range" value="16" min="2" max="100" value="16" class="slider" onchange="changeSize(this.value)">
+            </div>
+        </div>
+        <div class="gridBox"></div>
     </div>
     <script src="./js/script.js"></script>
 </body>
