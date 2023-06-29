@@ -1,7 +1,11 @@
 let color = 'black';
+let input = document.querySelectorAll(".input");
+let slider = document.querySelector(".slider")
 let mouseDown = false;
+
 window.addEventListener("mousedown", () => mouseDown = true);
 window.addEventListener("mouseup", () => mouseDown = false);
+input.forEach(input => input.innerHTML = slider.value);
 
 createGrid(16);
 
@@ -21,13 +25,11 @@ function createGrid(size) {
   }
 }
 
-function changeSize(input) {
-  if (input > 100) {
-    return alert("You can't have more than 100!");
-  }
-  else if (input < 2) {
-    return alert("That's too little!");
-  }
+slider.oninput = function() {
+  input.forEach(input => input.innerHTML = this.value);
+};
+
+function changeSize(input) { 
   createGrid(input);
 }
 
