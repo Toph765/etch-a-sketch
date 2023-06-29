@@ -1,4 +1,4 @@
-let color = 'black';
+let color = '#080202';
 let input = document.querySelectorAll(".input");
 let slider = document.querySelector(".slider")
 let mouseDown = false;
@@ -36,7 +36,7 @@ function changeSize(input) {
 function colorGrid(e) {
   if (e.type === "mousemove" && !mouseDown) return;
   if (color === "random") {
-    e.target.style.backgroundColor = `hsl(${Math.random()*360}, 100%, 50%)`;
+    e.target.style.backgroundColor = `hsl(${Math.random()*360}, 80%, 50%)`;
   } else {
     e.target.style.backgroundColor = color;
   }
